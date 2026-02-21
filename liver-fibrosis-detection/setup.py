@@ -14,7 +14,6 @@ setup(
         "matplotlib==3.10.0",
         "pillow==11.3.0",
         "opencv-python",
-        "json==2.0.9",
         "scikit-learn==1.6.1",
         "torchvision==0.25.0+cu128",
         "transformers==5.0.0",
