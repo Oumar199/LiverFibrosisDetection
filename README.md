@@ -1,17 +1,63 @@
-# LiverFibrosisDetection
+# LiverFibrosisDetection (Beta) 🩺
 
 **Sub-Project of [Deep Learning for Liver and Tumor Volumetry in Preoperative Planning](https://github.com/Oumar199/LiverVolumetry)**  
 
 ## Description
 
-LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis based on deep learning. 
+LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis based on deep learning. It implements a multi-modal AI pipeline designed for the screening of liver fibrosis. It bridges the gap between raw probability scores and clinical actionability by combining **EfficientNet (CNN)**, **Multi-Layer Perceptron (MLP)**, and **Gemma 1.1 (LLM)**.
 
----
+## 🧠 System Architecture
 
-## Methodology
+The diagnostic workflow is structured into three layers:
+
+1.  **Image Feature Extraction (EfficientNet-B0):** Analyzes ultrasound B-mode images to extract **1,280 visual features** (texture, nodularity, echogenicity).
+2.  **Clinical Fusion (MLP):** Integrates **21 clinical variables** (Age, BMI, HBV status, biological scores). On clear images, the model achieves **99% confidence**.
+3.  **Narrative Interpretation (Gemma 1.1 2B-IT):** A Large Language Model acts as a "Medical Assistant" to contextualize the classification output into a structured report.
+
+## 🤖 LLM Integration (Gemma 1.1)
+
+To overcome the "black box" nature of AI, we integrated **Gemma 1.1 (2B parameters)**. The model receives the raw prediction score and clinical data to generate a **SOAP Report** (Subjective, Objective, Assessment, Plan).
+
+### Score Interpretation Logic
+The system follows strict medical thresholds defined in the system prompt:
+*   **Score ≥ 60%:** **FIBROSIS SUSPICION** (High sensitivity, triggers mandatory confirmation).
+*   **50% - 60%:** **GRAY ZONE** (Indicates uncertainty, requires monitoring).
+*   **Score < 50%:** **FAVORABLE PROFILE** (Vigilance remains if clinical risk factors are present).
+
+### Clinical Guardrails
+*   **Strict Rules:** The LLM is programmed to never invent symptoms and must always recommend a **FibroScan** or **Biopsy** for scores above 60%.
+*   **Screening Tool:** The output explicitly states that the AI is a screening aid, not a definitive diagnosis.
+
+## 📊 Performance & Results
+
+The prediction model was validated on a dataset of **114 images** with a strategy prioritizing **Recall** (sensitivity) to minimize missed pathological cases.
 
 
-### Medgemma 1.2-2b-it's System Prompt
+| Metric | Value |
+| :--- | :--- |
+| **Recall (Sensitivity)** | **61%** |
+| **Precision** | 27% |
+| **F1-Score** | 0.373 |
+
+### Confusion Matrix (Validation Set)
+
+
+| | Predicted Healthy | Predicted Fibrosis |
+| :--- | :---: | :---: |
+| **Actual Healthy** | **68** (True Negatives) | **28** (False Positives) |
+| **Actual Diseased** | **8** (False Negatives) | **10** (True Positives) |
+
+*Decision Trade-off: The system accepts a higher False Positive rate (31%) to ensure that 61% of diseased cases are captured in a non-invasive screening stage.*
+
+## 📝 Example Output Format (SOAP)
+
+The model generates reports structured as follows:
+*   **S (Subjective):** Patient history and identified risk factors.
+*   **O (Objective):** AI probability score and clinical-imaging concordance.
+*   **A (Assessment):** Estimated fibrosis stage (F0-F4) and confidence level.
+*   **P (Plan):** Recommended follow-up (FibroScan, lifestyle changes, labs).
+
+### Gemma 1.2-2b-it's System Prompt
 
 ```
 You are a medical assistant specialized in hepatology and medical imaging.
@@ -65,20 +111,6 @@ STRICT RULES:
 Your tone must be: professional, precise, educational but accessible.
 ```
 
-## MedGemma's Contribution to Liver Fibrosis Detection
-
-MedGemma has greatly enhanced the accuracy and efficiency of liver fibrosis detection through its advanced integration into the existing framework. The following outlines its significant contributions:
-
-1. **Functional Contribution**: MedGemma provides real-time analysis and insights, allowing for quicker decision-making during liver assessment. Its algorithms improve measurement precision, directly impacting patient outcomes.
-
-2. **Methodological Value**: Integrating MedGemma into our pipeline enables the use of state-of-the-art techniques for fibrosis detection. This ensures consistency and reliability in the methodologies applied across different patient datasets.
-
-3. **Advantages Over Developing a Custom LLM**: Building a custom Large Language Model (LLM) from scratch often requires substantial resources in terms of time, data, and expertise. MedGemma offers a ready-to-use solution that leverages existing research and algorithms, thus reducing development overhead and expediting implementation.
-
-4. **Impact on the Overall Pipeline**: The integration of MedGemma has streamlined our workflow, allowing for seamless data input and output. This not only enhances productivity but also leads to more robust and reproducible results, improving the overall quality of liver volumetry assessments in clinical practice.
-
-In summary, the MedGemma integration represents a significant advancement in liver fibrosis detection, combining functional, methodological, and practical advantages that elevate our analytical capabilities and patient care standards.
-
 ---
 
 ## 🧪 Quick Test (Google Colab)
@@ -107,7 +139,7 @@ MIT License. See [LICENSE](LICENSE).
 
 ## References
 
-- [*Early Detection of Liver Fibrosis*](https://link.springer.com/chapter/10.1007/978-3-031-79103-1_1)
+- Preceding Released Scientific Papers: [*Early Detection of Liver Fibrosis*](https://link.springer.com/chapter/10.1007/978-3-031-79103-1_1)
 
 ---
 
