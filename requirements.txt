@@ -1,0 +1,11 @@
+torch==2.10.0+cu126
+numpy==2.0.2
+pandas==2.2.2
+matplotlib==3.10.0
+PIL==11.3.0
+opencv-python==4.13.0
+json==2.0.9
+scikit-learn==1.6.1
+torchvision==0.25.0+cu126
+transformers==5.0.0
+IPython==7.34.0
