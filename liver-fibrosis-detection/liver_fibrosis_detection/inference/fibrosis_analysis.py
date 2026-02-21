@@ -74,7 +74,7 @@ STRICT RULES:
 Your tone must be: professional, precise, educational but accessible."""
 
 # ============================================================================
-# 6. REPORT GENERATION WITH MEDGEMMA
+# 6. REPORT GENERATION WITH GEMMA
 # ============================================================================
 
 def format_patient_for_llm(patient_data, probability, prediction):
