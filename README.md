@@ -1,13 +1,10 @@
 # LiverFibrosisDetection
 
-**Deep Learning for Liver and Tumor Volumetry in Preoperative Planning**  
-
-<img width="1432" height="953" alt="image" src="https://github.com/user-attachments/assets/7a5feef7-e7da-43c6-a4fc-12b267dba18b" />
-
+**Sub-Project of [Deep Learning for Liver and Tumor Volumetry in Preoperative Planning](https://github.com/Oumar199/LiverVolumetry)**  
 
 ## Description
 
-LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis of the liver fibrosis, based on deep learning. 
+LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis based on deep learning. 
 
 ---
 
