@@ -7,14 +7,14 @@ setup(
     packages=find_packages(),
     author_email="cyakhoub.maas@univ-thies.sn ",
     description="Contains modules to detect liver fibrosis level and analysis the results from both heatmap of the liver fibrosis and clinical data using advanced AI models.",
-    install_requires=[
-        "torch==2.10.0+cu128",
-        "numpy==2.0.2",
-        "pandas==2.2.2",
-        "matplotlib==3.10.0",
-        "pillow==11.3.0",
-        "scikit-learn==1.6.1",
-        "torchvision==0.25.0+cu128",
-        "transformers==5.0.0"
-    ],
+    # install_requires=[
+    #     "torch==2.10.0+cu128",
+    #     "numpy==2.0.2",
+    #     "pandas==2.2.2",
+    #     "matplotlib==3.10.0",
+    #     "pillow==11.3.0",
+    #     "scikit-learn==1.6.1",
+    #     "torchvision==0.25.0+cu128",
+    #     "transformers==5.0.0"
+    # ],
 )
