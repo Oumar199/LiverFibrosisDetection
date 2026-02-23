@@ -23,7 +23,7 @@ print(f"🚀 Initialisation FibroDetect V4.1 sur {device}...")
 # ============================================================================
 
 # ⭐ OPTIMIZED SYSTEM PROMPT (Medical SOAP Structure)
-SYSTEM_PROMPT = """You are an expert hepatology AI diagnostic assistant based on MedGemma 1.5.
+SYSTEM_PROMPT = """You are an expert hepatology AI diagnostic assistant.
 
 Your task is to write a structured clinical report in the SOAP format (Subjective, Objective, Assessment, Plan) IN ENGLISH, based STRICTLY on the provided clinical data and AI imaging results.
 
