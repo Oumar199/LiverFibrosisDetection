@@ -70,7 +70,7 @@ Given the following liver's ultrasound image:
 
 And the following clinical information:
 
-= Age (years):  55
+- Age (years):  55
 - Sex (M/F):  F
 - BMI (kg/m²):  28
 - Heart rate (bpm):  83
