@@ -64,6 +64,40 @@ The model generates reports structured as follows:
 *   **A (Assessment):** Estimated fibrosis stage (F0-F4) and confidence level.
 *   **P (Plan):** Recommended follow-up (FibroScan, lifestyle changes, labs).
 
+Given the following liver's ultrasound image:
+
+<img width="687" height="426" alt="image" src="https://github.com/user-attachments/assets/8b1beb71-2911-49ae-8eb5-2b9b7415b6a6" />
+
+And the following clinical information:
+
+= Age (years):  55
+- Sex (M/F):  F
+- BMI (kg/m²):  28
+- Heart rate (bpm):  83
+- Temperature (°C):  37
+- Blood pressure (ex: 120/80):  12
+
+
+MedGemma gives us the following clinical analysis:
+
+```
+**S (SUBJECTIVE):**
+Patient is a 55-year-old female with a BMI of 28.0 kg/m². She has identifiable risk factors including being overweight and having an age greater than 50 years. There are no reported overt clinical signs noted during this encounter.
+
+**O (OBJECTIVE):**
+An AI model analysis was performed using liver ultrasound and 21 clinical variables.
+AI SCORE: 28.5%.
+Interpretation: Very favorable profile.
+Probable Stage Estimation: F0 (normal parenchyma).
+Model Performance Details: Recall = 61%, Precision = 27%.
+
+**A (ASSESSMENT):**
+Based on the AI model output, the patient presents with a very favorable profile suggestive of probable F0 (normal parenchyma). This falls within the range where standard annual surveillance is typically recommended. However, it is important to consider the limitations of the AI model, specifically its inability to perform biopsies or other advanced diagnostics like FibroScan. Confirmation via appropriate methods may be considered depending on individual circumstances, although the current AI estimate points towards F0.
+
+**P (PLAN):**
+Given the AI score indicating a very favorable profile (likely F0), recommend standard annual surveillance. If any new concerning symptoms arise, further evaluation should be considered. Confirmative testing such as biopsy could be discussed if clinically warranted, though the AI currently suggests F0.
+```
+
 ### MedGemma 1.5-4b-it's System Prompt
 
 ```
