@@ -1,6 +1,6 @@
 """ 🏥 SYSTÈME DE DIAGNOSTIC HÉPATIQUE V4.1 (SANS FIBROSCAN)
 ============================================================================
-Architecture : Hybrid CNN-MLP (V4.1) + MedGemma 1.5 4B
+Architecture : Hybrid CNN-MLP (V4.1) + MedGemma 1.5 4B IT
 Améliorations:
 - Architecture compatible V4.1 (Sampler seul)
 - Prompt médical optimisé (structure SOAP)
@@ -152,8 +152,7 @@ Generate the structured clinical report now following the SOAP format:"""
             do_sample=True,
             temperature=0.2,  # Low for consistency
             top_p=0.85,
-            repetition_penalty=1.15,  
-            return_full_test=False
+            repetition_penalty=1.15
         )
 
         # Extract generated text
