@@ -149,10 +149,12 @@ Generate the structured clinical report now following the SOAP format:"""
         response = llm(
             full_prompt,
             max_new_tokens=1500,
+            max_length=None,
             do_sample=True,
-            temperature=0.2,  # Low for consistency
+            temperature=0.1,
             top_p=0.85,
-            repetition_penalty=1.15
+            repetition_penalty=1.15,
+            return_full_text=False
         )
 
         # Extract generated text
