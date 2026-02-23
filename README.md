@@ -1,6 +1,13 @@
+
+
 # LiverFibrosisDetection (Beta) 🩺
 
 **Sub-Project of [Deep Learning for Liver and Tumor Volumetry in Preoperative Planning](https://github.com/Oumar199/LiverVolumetry)**  
+
+## Application Preview 
+
+https://github.com/user-attachments/assets/75cb8433-0e42-438a-920c-ceab13f072fd
+
 
 ## Description
 
