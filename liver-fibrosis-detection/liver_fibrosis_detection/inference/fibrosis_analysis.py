@@ -203,7 +203,7 @@ def generate_medical_report(llm, patient_data, probability, prediction):
     Generates the structured medical report
     """
     print("\n" + "="*70)
-    print("📝 MEDICAL REPORT GENERATION (MedGemma 2B)")
+    print("📝 MEDICAL REPORT GENERATION (MedGemma 1.5-4b-it)")
     print("="*70 + "\n")
 
     context = format_patient_for_llm(patient_data, probability)

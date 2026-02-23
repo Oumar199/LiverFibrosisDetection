@@ -1,10 +1,11 @@
-torch==2.10.0+cu126
+torch==2.10.0
 numpy==2.0.2
 pandas==2.2.2
 matplotlib==3.10.0
 pillow==11.3.0
 opencv-python
 scikit-learn==1.6.1
-torchvision==0.25.0+cu126
+torchvision==0.25.0
 transformers==5.0.0
-IPython==7.34.0
+bitsandbytes==0.46.1
+accelerate
