@@ -95,6 +95,7 @@ MedGemma gives us the following clinical analysis:
 
 > **P (PLAN):**
 > Given the AI score indicating a very favorable profile (likely F0), recommend standard annual surveillance. If any new concerning symptoms arise, further evaluation should be considered. Confirmative testing such as biopsy could be discussed if clinically warranted, though the AI currently suggests F0.
+
 > [!CAUTION]
 > **Medical Disclaimer:** This analysis is **AI-generated** and intended for research purposes only. It must not be used for medical diagnosis. Always consult a qualified healthcare professional for medical concerns.
 
