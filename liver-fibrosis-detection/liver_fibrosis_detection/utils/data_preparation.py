@@ -139,13 +139,15 @@ def collect_patient_data(necessary_only: bool = True):
     symptomes = ['asthenie', 'amaigrissement', 'oedeme', 'palleur', 'ictere',
                  'hepatomegalie', 'hepatalgie', 'ascite', 'exantheme']
 
+    reps = {}
+    
     for symp in symptomes:
         label = COLUMN_MAP.get(symp, symp)
-        rep = input(f"  {label}: ").strip().lower() if not necessary_only else "N"
-        data[symp] = 1.0 if rep in ['o', 'oui', 'y', 'yes', '1'] else 0.0
+        reps[symp] = input(f"  {label}: ").strip().lower() if not necessary_only else "N"
+        data[symp] = 1.0 if reps[symp] in ['o', 'oui', 'y', 'yes', '1'] else 0.0
 
     if necessary_only:
-        print("  ")
+        
         # Print English names for positive symptoms only
         symptom_names = {
             'asthenie': 'Asthenia',
@@ -160,8 +162,7 @@ def collect_patient_data(necessary_only: bool = True):
         }
         
         for symp in symptomes:
-            if data[symp] == 1.0:
-                print(f"  {symptom_names[symp]}: {data[symp]}")
+            print(f"  {symptom_names[symp]}: {reps[symp]}")
 
 
     # Rare clinical signs
