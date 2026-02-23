@@ -4,7 +4,7 @@
 
 ## Description
 
-LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis based on deep learning. It implements a multi-modal AI pipeline designed for the screening of liver fibrosis. It bridges the gap between raw probability scores and clinical actionability by combining **EfficientNet (CNN)**, **Multi-Layer Perceptron (MLP)**, and **Gemma 1.1 (LLM)**.
+LiverFibrosisDetection is an open-source Python package for automatic liver fibrosis detection and clinical analysis based on deep learning. It implements a multi-modal AI pipeline designed for the screening of liver fibrosis. It bridges the gap between raw probability scores and clinical actionability by combining **EfficientNet (CNN)**, **Multi-Layer Perceptron (MLP)**, and **MedGemma 1.5-4B-it (LLM)**.
 
 ## 🧠 System Architecture
 
