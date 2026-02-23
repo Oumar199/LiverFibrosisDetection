@@ -186,7 +186,12 @@ def collect_patient_data(necessary_only: bool = True):
     print("\n--- Risk Factors ---")
     pvhb = input("  Hepatitis B (HBV): ").lower() if not necessary_only else "N"
     data['presence_vhb'] = 1.0 if pvhb in ['o', 'oui', 'y'] else 0.0
-
+     
+    if necessary_only:
+        
+        print(f"  Hepatitis B (HBV): {data['presence_vhb']}")
+        
+    
     return data
 
 
