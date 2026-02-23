@@ -12,11 +12,11 @@ The diagnostic workflow is structured into three layers:
 
 1.  **Image Feature Extraction (EfficientNet-B0):** Analyzes ultrasound B-mode images to extract **1,280 visual features** (texture, nodularity, echogenicity).
 2.  **Clinical Fusion (MLP):** Integrates **21 clinical variables** (Age, BMI, HBV status, biological scores). On clear images, the model achieves **99% confidence**.
-3.  **Narrative Interpretation (Gemma 1.1 2B-IT):** A Large Language Model acts as a "Medical Assistant" to contextualize the classification output into a structured report.
+3.  **Narrative Interpretation (MedGemma 1.5-4B-IT):** A Large Language Model acts as a "Medical Assistant" to contextualize the classification output into a structured report.
 
-## 🤖 LLM Integration (Gemma 1.1)
+## 🤖 LLM Integration (MedGemma 1.5-4B-it)
 
-To overcome the "black box" nature of AI, we integrated **Gemma 1.1 (2B parameters)**. The model receives the raw prediction score and clinical data to generate a **SOAP Report** (Subjective, Objective, Assessment, Plan).
+To overcome the "black box" nature of AI, we integrated **Instructed MedGemma 1.5 (4B parameters)**. The model receives the raw prediction score and clinical data to generate a **SOAP Report** (Subjective, Objective, Assessment, Plan).
 
 ### Score Interpretation Logic
 The system follows strict medical thresholds defined in the system prompt:
@@ -57,7 +57,7 @@ The model generates reports structured as follows:
 *   **A (Assessment):** Estimated fibrosis stage (F0-F4) and confidence level.
 *   **P (Plan):** Recommended follow-up (FibroScan, lifestyle changes, labs).
 
-### Gemma 1.2-2b-it's System Prompt
+### MedGemma 1.5-4b-it's System Prompt
 
 ```
 You are a medical assistant specialized in hepatology and medical imaging.
